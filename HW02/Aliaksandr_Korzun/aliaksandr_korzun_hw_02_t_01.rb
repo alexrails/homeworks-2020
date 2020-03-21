@@ -7,4 +7,3 @@ def find_error_logs(logs)
 end
 
 find_error_logs(logs)
-
