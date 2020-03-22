@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 logs = 'logfile.txt'
 
 IP_ADDRESS = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.freeze

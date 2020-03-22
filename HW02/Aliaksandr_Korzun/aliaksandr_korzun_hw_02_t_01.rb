@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 logs = 'logfile.txt'
 
 def find_error_logs(logs)
