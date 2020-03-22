@@ -32,8 +32,6 @@ def duration_of_actions(logs)
   result_hash
 end
 
-private
-
 # Find substring
 def core?(line)
   !line.downcase.include?(SUBSTRING)

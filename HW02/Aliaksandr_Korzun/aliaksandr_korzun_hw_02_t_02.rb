@@ -17,8 +17,6 @@ def format_log_string(logs)
   end
 end
 
-private
-
 def error?(line)
   line.downcase.include?('error')
 end
