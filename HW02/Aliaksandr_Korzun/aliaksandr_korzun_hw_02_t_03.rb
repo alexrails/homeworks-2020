@@ -51,4 +51,4 @@ end
 
 p duration_of_actions(logs)
 
-# Output: {"event->messages"=>"49.1"}
+# Output: {"event->messages"=>"49.1", "messages->create"=>"40.0"}
