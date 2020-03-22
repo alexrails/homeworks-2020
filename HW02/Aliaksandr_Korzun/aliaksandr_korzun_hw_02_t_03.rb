@@ -12,6 +12,9 @@ def duration_of_actions(logs)
   file_data = File.readlines(logs).map(&:chomp).
     delete_if { |line| core?(line) }
 
+  return 0 if file_data.size < 2
+
+  #Fill in hash
   file_data.each.with_index do |line, index|
     if index < file_data.size - 1
       first_action = last_word(line)
@@ -24,7 +27,7 @@ def duration_of_actions(logs)
       result_hash["#{first_action}->#{second_action}"] = "#{finish - start}"
     end
   end
-  p result_hash
+  result_hash
 end
 
 private
@@ -44,4 +47,6 @@ def last_word(line)
   line.split.last
 end
 
-duration_of_actions(logs)
+p duration_of_actions(logs)
+
+#Output: {"event->messages"=>"49.1"}
