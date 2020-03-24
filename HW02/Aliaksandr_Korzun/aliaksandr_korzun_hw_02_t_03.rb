@@ -2,7 +2,7 @@
 
 require 'time'
 
-logs = 'logfile_task_3.txt'
+LOG_FILE = 'logfile_task_3.txt'
 
 SUBSTRING = 'calling core'
 TIME_TEMPLATE = /^\d{4}\-\d{2}\-\d{2}\s\d{2}\:\d{2}\:\d{2}\.\d{1}/.freeze
@@ -47,6 +47,6 @@ def last_word(line)
   line.split.last
 end
 
-p duration_of_actions(logs)
+p duration_of_actions(LOG_FILE)
 
 # Output: {"event->messages"=>"49.1", "messages->create"=>"40.0"}
