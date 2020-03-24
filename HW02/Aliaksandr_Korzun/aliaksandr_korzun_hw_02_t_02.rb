@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-logs = 'logfile.txt'
+LOG_FILE = 'logfile.txt'
 
 IP_ADDRESS = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.freeze
 DATE_INFO = /\[.*\]/.freeze
@@ -21,4 +21,4 @@ def error?(line)
   line.downcase.include?('error')
 end
 
-p format_log_string(logs)
+p format_log_string(LOG_FILE)
