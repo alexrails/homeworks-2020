@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 LOG_FILE = 'logfile.txt'
-
+TEMPLATE = /error/
 def find_error_logs(logs)
-  File.foreach(logs) do |line|
-    puts line if line.downcase.include?('error')
-  end
+  File.readlines(logs).select{ |line| line =~ TEMPLATE }.first
 end
 
-find_error_logs(LOG_FILE)
+p find_error_logs(LOG_FILE)
