@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-logs = 'logfile.txt'
+LOG_FILE = 'logfile.txt'
 
 def find_error_logs(logs)
   File.foreach(logs) do |line|
@@ -8,4 +8,4 @@ def find_error_logs(logs)
   end
 end
 
-find_error_logs(logs)
+find_error_logs(LOG_FILE)
