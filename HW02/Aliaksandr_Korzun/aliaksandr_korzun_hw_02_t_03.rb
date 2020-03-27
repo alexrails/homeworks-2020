@@ -17,17 +17,14 @@ def duration_of_actions(logs)
   return 0 if file_data.size < 2
 
   # Fill in hash
-  file_data.each.with_index do |line, index|
-    if index < file_data.size - 1
-      first_action = last_word(line)
-      start = parse_time(line)
+  file_data.each_cons(2) do |item|
+    first_action = last_word(item.first)
+    start = parse_time(item.first)
 
-      next_line = file_data[index + 1]
-      second_action = last_word(next_line)
-      finish = parse_time(next_line)
+    second_action = last_word(item.last)
+    finish = parse_time(item.last)
 
-      result_hash["#{first_action}->#{second_action}"] = (finish - start).to_s
-    end
+    result_hash["#{first_action}->#{second_action}"] = (finish - start).to_s
   end
   result_hash
 end
