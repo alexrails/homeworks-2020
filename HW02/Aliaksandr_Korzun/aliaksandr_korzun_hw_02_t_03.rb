@@ -13,6 +13,7 @@ def duration_of_actions(logs)
   file_data = File.readlines(logs).map(&:chomp)
                   .delete_if { |line| core?(line) }
   return 0 if file_data.size < 2
+
   # Fill in hash
   file_data.each_cons(2) do |item|
     result_hash["#{get_action(item.first)}->#{get_action(item.last)}"] =
