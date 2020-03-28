@@ -8,18 +8,15 @@ SUBSTRING = 'calling core'
 TIME_TEMPLATE = /^\d{4}\-\d{2}\-\d{2}\s\d{2}\:\d{2}\:\d{2}\.\d{1}/.freeze
 
 def duration_of_actions(logs)
-  result_hash = {}
   # Create array of logs
   file_data = File.readlines(logs).map(&:chomp)
                   .delete_if { |line| core?(line) }
   return 0 if file_data.size < 2
 
   # Fill in hash
-  file_data.each_cons(2) do |item|
-    result_hash["#{get_action(item.first)}->#{get_action(item.last)}"] =
-      (parse_time(item.last) - parse_time(item.first)).to_s
+  file_data.each_cons(2).map do |item|
+    (parse_time(item.last) - parse_time(item.first)).to_s
   end
-  result_hash
 end
 
 # Find substring
@@ -32,15 +29,6 @@ def parse_time(line)
   Time.parse(line[TIME_TEMPLATE])
 end
 
-# Find last word to string
-def last_word(line)
-  line.split.last
-end
-
-def get_action(item)
-  last_word(item)
-end
-
 p duration_of_actions(LOG_FILE)
 
-# Output: {"event->messages"=>"49.1", "messages->create"=>"40.0"}
+# Output: ["49.1", "40.0"]
