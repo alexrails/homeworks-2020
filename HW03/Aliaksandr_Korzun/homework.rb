@@ -4,7 +4,7 @@
 class Homework
   attr_reader :number, :task
 
-  @homeworks = {}
+  @@homeworks = {}
 
   def self.find(number)
     @@homeworks[number]

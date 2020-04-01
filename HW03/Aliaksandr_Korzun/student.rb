@@ -5,7 +5,7 @@
 class Student < User
   attr_accessor :pull_requests, :followers
 
-  @students = {}
+  @@students = {}
 
   def self.all
     @@students

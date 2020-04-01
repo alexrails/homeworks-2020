@@ -7,3 +7,5 @@ Metrics/MethodLength:
           - 'application.rb'
 Style/Documentation:
     Enabled: false
+Style/ClassVars:
+    Enabled: false
