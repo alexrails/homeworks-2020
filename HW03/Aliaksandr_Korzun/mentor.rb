@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Mentor class
+
 class Mentor < User
   attr_accessor :homeworks, :students, :notifications
 
@@ -8,6 +12,7 @@ class Mentor < User
     @homeworks = []
   end
 
+  # Show all stidents for choice
   def show_all_students
     Student.all
   end
@@ -22,6 +27,7 @@ class Mentor < User
     find_student(student_surname).followers >> self
   end
 
+  # Create task for students
   def create_homework(number, task)
     homeworks << Homework.new(number, task)
   end
@@ -32,8 +38,8 @@ class Mentor < User
 
   private
 
+  # Find of necessary student
   def find_student(student_surname)
     Student.find(student_surname)
   end
-
 end

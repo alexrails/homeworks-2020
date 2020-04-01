@@ -1,7 +1,12 @@
+# frozen_string_literal: true
+
+# PullRequest class
+
 class PullRequest
   attr_accessor :author, :code
   attr_reader :homework_number
 
+  # Has homework object, which created mentor
   def initialize(author, homework, code)
     @author = author
     @homework = homework

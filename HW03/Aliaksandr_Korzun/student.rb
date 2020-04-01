@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
+# Student class
+
 class Student < User
   attr_accessor :pull_requests, :followers
 
-  @@students = {}
+  @students = {}
 
   def self.all
     @@students
@@ -20,7 +24,8 @@ class Student < User
 
   def create_pull_request!(homework_number, code)
     validate_of_homework(homework_number)
-    pull_requests << PullRequest.new(self.surname, find_homework(homework_number), code)
+    pull_requests << PullRequest.new(surname,
+                                     find_homework(homework_number), code)
     notify_followers
   end
 
@@ -28,7 +33,7 @@ class Student < User
 
   def notify_followers
     followers.each do |follower|
-      follower.notifications << Notification.new.message(self.surname)
+      follower.notifications << Notification.new.message(surname)
     end
   end
 

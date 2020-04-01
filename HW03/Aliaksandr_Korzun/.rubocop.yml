@@ -1,0 +1,9 @@
+Metrics/AbcSize:
+    Exclude:
+          - 'application.rb'
+
+Metrics/MethodLength:
+    Exclude:
+          - 'application.rb'
+Style/Documentation:
+    Enabled: false

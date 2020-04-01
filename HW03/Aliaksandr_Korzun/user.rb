@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# User class
+
 class User
   attr_accessor :name, :surname
 
@@ -5,5 +9,4 @@ class User
     @name = name
     @surname = surname
   end
-
 end
