@@ -2,7 +2,7 @@
 
 # Student class
 
-class Student < User
+class Student < Human
   attr_accessor :pull_requests, :followers
 
   @@students = {}

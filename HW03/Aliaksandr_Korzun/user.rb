@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# User class
+# Human class
 
-class User
+class Human
   attr_accessor :name, :surname
 
   def initialize(name, surname)
