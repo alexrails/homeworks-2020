@@ -12,8 +12,11 @@ module App
     student = Student.new(name: 'John', surname: 'Doe')
     mentor = Mentor.new(name: 'Jack', surname: 'Gonsales')
 
-    mentor.create_homework(1, 'To do something cool')
-    mentor.create_homework(2, 'To do somenthing again')
+    homework_first = Homework.new(1, 'To do something cool')
+    homework_second = Homework.new(2, 'To do something again')
+
+    mentor.create_homework(homework_first)
+    mentor.create_homework(homework.second)
 
     student.create_pull_request!(homework_number, code)
     student.pull_requests # => [Homework, ...]

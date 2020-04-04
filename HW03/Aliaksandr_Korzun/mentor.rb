@@ -2,7 +2,7 @@
 
 # Mentor class
 
-class Mentor < User
+class Mentor < Human
   attr_accessor :homeworks, :students, :notifications
 
   def initialize(name, surname)
@@ -28,8 +28,8 @@ class Mentor < User
   end
 
   # Create task for students
-  def create_homework(number, task)
-    homeworks << Homework.new(number, task)
+  def create_homework(homework)
+    homeworks << homework
   end
 
   def read_notifications!
