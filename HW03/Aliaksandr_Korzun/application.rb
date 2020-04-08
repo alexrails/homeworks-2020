@@ -12,22 +12,22 @@ module App
     student = Student.new(name: 'John', surname: 'Doe')
     mentor = Mentor.new(name: 'Jack', surname: 'Gonsales')
 
-    homework_first = Homework.new(1, 'To do something cool')
-    homework_second = Homework.new(2, 'To do something again')
+    homework1 = Homework.new(1, 'To do something cool')
+    homework2 = Homework.new(2, 'To do something again')
 
-    mentor.create_homework(homework_first)
-    mentor.create_homework(homework.second)
+    mentor.create_homework(homework1)
+    mentor.create_homework(homework2)
 
-    pull_request_1 = PullRequest.new
-    pull_request_2 = PullRequest.new
+    pullrequest_first = PullRequest.new
+    pullrequest_second = PullRequest.new
 
-    student.create_pull_request!(pull_request_1, homework_number, code)
+    student.create_pull_request!(pullrequest_first, homework_number, code)
     student.pull_requests # => [Homework, ...]
 
     mentor.subscribe_to(student_surname)
     mentor.notifications # => []
 
-    student.create_pull_request!(pull_request_2, homework_data, code)
+    student.create_pull_request!(pullrequest_second, homework_data, code)
     mentor.notifications # => [Notification, ...]
 
     mentor.read_notifications!

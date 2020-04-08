@@ -25,7 +25,7 @@ class Student < Human
   def create_pull_request!(pull_request, homework_number, code)
     validate_of_homework(homework_number)
     pull_requests << pull_request.create(surname,
-                                     find_homework(homework_number), code)
+                                         find_homework(homework_number), code)
     notify_followers
   end
 
