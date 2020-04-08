@@ -18,13 +18,16 @@ module App
     mentor.create_homework(homework_first)
     mentor.create_homework(homework.second)
 
-    student.create_pull_request!(homework_number, code)
+    pull_request_1 = PullRequest.new
+    pull_request_2 = PullRequest.new
+
+    student.create_pull_request!(pull_request_1, homework_number, code)
     student.pull_requests # => [Homework, ...]
 
     mentor.subscribe_to(student_surname)
     mentor.notifications # => []
 
-    student.create_pull_request!(homework_data)
+    student.create_pull_request!(pull_request_2, homework_data, code)
     mentor.notifications # => [Notification, ...]
 
     mentor.read_notifications!

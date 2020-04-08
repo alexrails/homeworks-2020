@@ -7,7 +7,7 @@ class PullRequest
   attr_reader :homework_number
 
   # Has homework object, which created mentor
-  def initialize(author, homework, code)
+  def create(author, homework, code)
     @author = author
     @homework = homework
     @code = code

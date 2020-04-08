@@ -22,9 +22,9 @@ class Student < Human
     @@students[surname] = self
   end
 
-  def create_pull_request!(homework_number, code)
+  def create_pull_request!(pull_request, homework_number, code)
     validate_of_homework(homework_number)
-    pull_requests << PullRequest.new(surname,
+    pull_requests << pull_request.create(surname,
                                      find_homework(homework_number), code)
     notify_followers
   end
